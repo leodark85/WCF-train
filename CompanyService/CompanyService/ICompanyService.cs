@@ -9,9 +9,15 @@ namespace CompanyService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "ICompanyService" in both code and config file together.
     [ServiceContract]
-    public interface ICompanyService
+    public interface ICompanyPublicService
     {
         [OperationContract]
-        void DoWork();
+        string GetPublicInformation();
+    }
+    [ServiceContract]
+    public interface ICompanyConfidentialService
+    {
+        [OperationContract]
+        string GetconfidentialInformation();
     }
 }
